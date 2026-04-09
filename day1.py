@@ -9,10 +9,10 @@ def scan_image_folder(folder_path):
 
     if not folder.exists():
         print(f"Error: Folder '{folder}' does not exist")
-        return []
+        sys.exit(1)
 
     for img_path in folder.rglob("*"):
-        if img_path.suffix.lower() not in ['.jpg','.jpeg','.png', '.webp', '.bmp', '.tiff']:
+        if img_path.suffix.lower() not in ['.jpg','.jpeg','.png','.webp','.bmp']:
             continue
         try:
             img = Image.open(img_path)
@@ -37,8 +37,8 @@ def scan_image_folder(folder_path):
     return results
 
 if __name__ == "__main__":
-    # Use command line argument if provided, else use default
-    folder = sys.argv[1] if len(sys.argv) > 1 else "/home/faizan/Documents/mlops-journey/day-1/images"
+    # Use environment variable or default
+    folder = os.getenv("IMAGE_FOLDER", "/home/faizan/Documents/mlops-journey/day-1/images")
     
     data = scan_image_folder(folder)
     
