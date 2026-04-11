@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+reports/
+test_images/
+*.csv
+notes/
+run_scan.sh
+README.md
