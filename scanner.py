@@ -54,4 +54,3 @@ def scan_folder(folder_path: str) -> list[dict]:
 
     return results
 
-import os  # unused import — ruff will catch this
