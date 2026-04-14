@@ -53,3 +53,5 @@ def scan_folder(folder_path: str) -> list[dict]:
             results.append(scan_single_image(img_path))
 
     return results
+
+import os  # unused import — ruff will catch this
