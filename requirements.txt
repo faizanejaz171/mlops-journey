@@ -24,6 +24,7 @@ pytest-cov==7.1.0
 python-dateutil==2.9.0.post0
 python-multipart==0.0.26
 pytz==2026.1.post1
+ruff==0.15.10          ← ADD THIS
 six==1.17.0
 starlette==1.0.0
 tomli==2.4.1
