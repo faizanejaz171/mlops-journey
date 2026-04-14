@@ -114,3 +114,7 @@ class TestScanFolder:
     def test_missing_folder_raises_file_not_found(self):
         with pytest.raises(FileNotFoundError):
             scan_folder("/this/path/does/not/exist")
+
+def test_intentionally_broken():
+    """This test is broken on purpose to see CI fail."""
+    assert 1 == 2, "This will always fail"
