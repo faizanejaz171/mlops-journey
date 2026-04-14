@@ -1,7 +1,9 @@
 import os
 import sys
 from pathlib import Path
+
 from PIL import Image
+
 
 def scan_image_folder(folder_path):
     folder = Path(folder_path)
@@ -39,9 +41,9 @@ def scan_image_folder(folder_path):
 if __name__ == "__main__":
     # Use environment variable or default
     folder = os.getenv("IMAGE_FOLDER", "/home/faizan/Documents/mlops-journey/day-1/images")
-    
+
     data = scan_image_folder(folder)
-    
+
     print(f"\nFound {len(data)} images in: {folder}\n")
     for row in data:
         status_icon = "✓" if row['status'] == 'ok' else "✗"

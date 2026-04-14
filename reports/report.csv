@@ -1,0 +1,6 @@
+filename,folder,width_px,height_px,aspect_ratio,size_kb,format,mode,status
+1.jpg,/data/input,640,640,1.0,77.72,JPEG,RGB,ok
+2.jpg,/data/input,640,640,1.0,41.84,JPEG,RGB,ok
+3.jpg,/data/input,640,640,1.0,70.85,JPEG,RGB,ok
+cameras-path.jpg,/data/input,0,0,0,0,unknown,unknown,error: cannot identify image file '/data/input/cameras-path.jpg'
+fake.jpg,/data/input,0,0,0,0,unknown,unknown,error: cannot identify image file '/data/input/fake.jpg'

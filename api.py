@@ -1,12 +1,10 @@
-import io
 import tempfile
 from pathlib import Path
 
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
-from scanner import scan_single_image, scan_folder
-
+from scanner import scan_folder, scan_single_image
 
 app = FastAPI(
     title="Image Scanner API",

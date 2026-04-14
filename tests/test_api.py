@@ -1,17 +1,17 @@
-import pytest
-from pathlib import Path
-from PIL import Image
 import io
 import sys
+from pathlib import Path
+
+import pytest
+from PIL import Image
 
 # Add parent folder to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # Import your FastAPI app (adjust import as per your file structure)
-from api import app  # or from main import app, or whatever your file is named
-
 from fastapi.testclient import TestClient
 
+from api import app  # or from main import app, or whatever your file is named
 
 # ===== FIXTURES =====
 
@@ -35,15 +35,15 @@ def image_folder(tmp_path):
     """Create folder with 3 valid + 1 corrupt image."""
     folder = tmp_path / "test_images"
     folder.mkdir()
-    
+
     # 3 valid images
     for i in range(3):
         img = Image.new("RGB", (100, 100), color="green")
         img.save(folder / f"valid_{i}.png")
-    
+
     # 1 corrupt image
     (folder / "corrupt.jpg").write_text("fake data")
-    
+
     return str(folder)  # Return as string for URL parameter
 
 

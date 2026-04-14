@@ -1,12 +1,12 @@
-import pytest
-from pathlib import Path
-from PIL import Image
 import sys
+from pathlib import Path
+
+import pytest
+from PIL import Image
 
 # Add parent folder to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from scanner import scan_single_image, scan_folder
-
+from scanner import scan_folder, scan_single_image
 
 # ===== FIXTURES (test data generators) =====
 
@@ -32,15 +32,15 @@ def image_folder(tmp_path):
     """Create folder with 3 valid + 1 corrupt image."""
     folder = tmp_path / "test_images"
     folder.mkdir()
-    
+
     # 3 valid images
     for i in range(3):
         img = Image.new("RGB", (100, 100), color="blue")
         img.save(folder / f"valid_{i}.png")
-    
+
     # 1 corrupt image
     (folder / "corrupt.jpg").write_text("fake data")
-    
+
     return folder
 
 
@@ -85,7 +85,7 @@ class TestScanSingleImage:
 
     def test_corrupt_image_does_not_raise_exception(self, corrupt_image_file):
         try:
-            result = scan_single_image(corrupt_image_file)
+            _ = scan_single_image(corrupt_image_file)
         except Exception as e:
             pytest.fail(f"scan_single_image raised an exception: {e}")
 

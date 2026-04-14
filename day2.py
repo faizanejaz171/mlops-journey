@@ -1,8 +1,8 @@
-import os
-import csv
 import argparse
-from pathlib import Path
+import csv
 from datetime import datetime
+from pathlib import Path
+
 from PIL import Image
 
 
@@ -79,7 +79,7 @@ def print_summary(results: list[dict]):
     errors = [r for r in results if r["status"] != "ok"]
 
     print("\n" + "="*45)
-    print(f"  IMAGE SCAN REPORT")
+    print("  IMAGE SCAN REPORT")
     print(f"  Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("="*45)
     print(f"  Total files found : {total}")
@@ -91,10 +91,10 @@ def print_summary(results: list[dict]):
         widths = [r["width_px"] for r in ok]
         heights = [r["height_px"] for r in ok]
 
-        print(f"\n  Size (KB):")
+        print("\n  Size (KB):")
         print(f"    Min: {min(sizes)}   Max: {max(sizes)}")
         print(f"    Avg: {round(sum(sizes)/len(sizes), 1)}")
-        print(f"\n  Dimensions:")
+        print("\n  Dimensions:")
         print(f"    Width  — Min: {min(widths)}px  Max: {max(widths)}px")
         print(f"    Height — Min: {min(heights)}px  Max: {max(heights)}px")
 
@@ -104,7 +104,7 @@ def print_summary(results: list[dict]):
         print(f"\n  Colour modes: {modes}")
 
     if errors:
-        print(f"\n  Errors:")
+        print("\n  Errors:")
         for e in errors:
             print(f"    {e['filename']}: {e['status']}")
 
