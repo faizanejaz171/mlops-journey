@@ -12,3 +12,7 @@ python day1.py
 
 ## Requirements
 pip install pillow pandas
+
+## Status
+
+![CI](https://github.com/YOURUSERNAME/mlops-journey/actions/workflows/ci.yml/badge.svg)

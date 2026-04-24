@@ -1,0 +1,6 @@
+#!/home/faizan/Documents/mlops-journey/day-1/mlops-env/bin/python3
+import sys
+from fontTools.subset import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
